@@ -1,0 +1,12 @@
+{
+  "label": "phase2",
+  "algorithm": "TRPO",
+  "training_reward": "Model-2 proxy (dense reward)",
+  "evaluation_reward": "Model-1 (V2G Profit Maximization sparse reward)",
+  "total_timesteps": 1000000,
+  "n_envs": 30,
+  "seed": 42,
+  "model_path": "results_trpo_model1/trpo_final_phase2",
+  "vecnorm_path": "results_trpo_model1/vecnorm_phase2.pkl",
+  "vecnorm_frozen_for_eval": true
+}

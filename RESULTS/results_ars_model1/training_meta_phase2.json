@@ -1,0 +1,13 @@
+{
+  "label": "phase2",
+  "algorithm": "ARS",
+  "algorithm_type": "gradient-free random search",
+  "training_reward": "Model-2 proxy (dense fitness signal for perturbation selection)",
+  "evaluation_reward": "Model-1 (V2G Profit Maximization sparse reward)",
+  "total_timesteps": 1000000,
+  "n_envs": 30,
+  "seed": 42,
+  "model_path": "results_ars_model1/ars_final_phase2",
+  "vecnorm_path": "results_ars_model1/vecnorm_phase2.pkl",
+  "vecnorm_frozen_for_eval": true
+}

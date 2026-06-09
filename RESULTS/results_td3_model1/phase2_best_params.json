@@ -1,0 +1,37 @@
+{
+  "best_value": 47.097890110733715,
+  "arch": {
+    "pi": [
+      128,
+      128,
+      512,
+      512
+    ],
+    "qf": [
+      1024,
+      512,
+      1024,
+      64
+    ]
+  },
+  "hp": {
+    "learning_rate": 6.518413863813437e-05,
+    "gamma": 0.9665793271516268,
+    "tau": 0.018978494465076153,
+    "batch_size": 128,
+    "buffer_size": 500000,
+    "learning_starts": 1000,
+    "train_freq": 4,
+    "gradient_steps": 8,
+    "policy_delay": 2,
+    "target_policy_noise": 0.13253951225675992,
+    "target_noise_clip": 0.35938639985963433,
+    "action_noise_type": "normal",
+    "action_noise_sigma": 0.2167889661801009
+  },
+  "yaml_params": {
+    "spawn_multiplier": 6,
+    "discharge_price_factor": 1.4630740041687011,
+    "transformer_max_power": 300
+  }
+}

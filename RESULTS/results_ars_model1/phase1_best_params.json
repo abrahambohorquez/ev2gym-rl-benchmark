@@ -1,0 +1,16 @@
+{
+  "best_value": 6.512407026784359,
+  "arch": {
+    "net": [
+      512,
+      256
+    ]
+  },
+  "hp": {
+    "learning_rate": 0.0006458079140757046,
+    "n_delta": 4,
+    "n_top": 7,
+    "delta_std": 0.116589030073671,
+    "zero_policy": false
+  }
+}

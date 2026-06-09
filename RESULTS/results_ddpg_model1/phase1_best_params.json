@@ -1,0 +1,29 @@
+{
+  "best_value": 5.149872543872334,
+  "arch": {
+    "pi": [
+      64,
+      64,
+      64,
+      64
+    ],
+    "qf": [
+      512,
+      256,
+      256,
+      64
+    ]
+  },
+  "hp": {
+    "learning_rate": 0.00019447566486155575,
+    "gamma": 0.9764595207818283,
+    "tau": 0.007651422535727837,
+    "batch_size": 1024,
+    "buffer_size": 100000,
+    "learning_starts": 1000,
+    "train_freq": 1,
+    "gradient_steps": 4,
+    "action_noise_type": "ou",
+    "action_noise_sigma": 0.20671496016048518
+  }
+}

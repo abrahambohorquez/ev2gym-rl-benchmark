@@ -1,0 +1,17 @@
+{
+  "label": "phase2",
+  "algorithm": "PPO",
+  "algorithm_type": "on-policy clipped surrogate",
+  "training_reward": "Model-2 proxy (dense reward for advantage estimation)",
+  "evaluation_reward": "Model-1 (V2G Profit Maximization sparse reward)",
+  "total_timesteps": 1000000,
+  "n_envs": 30,
+  "seed": 42,
+  "n_steps": 512,
+  "rollout_buffer_size": 15360,
+  "batch_size_requested": 1024,
+  "batch_size_effective": 1024,
+  "model_path": "results_ppo_model1/ppo_final_phase2",
+  "vecnorm_path": "results_ppo_model1/vecnorm_phase2.pkl",
+  "vecnorm_frozen_for_eval": true
+}

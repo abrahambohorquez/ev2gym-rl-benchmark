@@ -1,0 +1,13 @@
+{
+  "label": "phase1",
+  "algorithm": "CrossQ",
+  "algorithm_type": "off-policy cross-normalised Q-learning (sbx JAX)",
+  "training_reward": "Model-2 proxy (dense reward, cross-normalised batches)",
+  "evaluation_reward": "Model-1 (V2G Profit Maximization sparse reward)",
+  "total_timesteps": 1000000,
+  "n_envs": 30,
+  "seed": 42,
+  "model_path": "results_crossq_model1/crossq_final_phase1",
+  "vecnorm_path": "results_crossq_model1/vecnorm_phase1.pkl",
+  "vecnorm_frozen_for_eval": true
+}

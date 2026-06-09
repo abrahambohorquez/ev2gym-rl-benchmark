@@ -1,0 +1,46 @@
+{
+  "algorithms": [
+    "Oracle_MIQP",
+    "MPC"
+  ],
+  "oracle_notes": {
+    "type": "Perfect-information upper bound (MIQP + Gurobi)",
+    "class": "V2GProfitMaxOracleGB",
+    "perfect_information": true,
+    "upper_bound": "Oracle is NOT achievable by any real-time controller",
+    "reward_used": "Model-1 directly (no proxy reward)",
+    "formulation_gap_warning": "Comparing Oracle to RL is not an optimality gap. RL trains on Model-2 proxy (PowerTrackingErrorMin) and evaluates on Model-1. Oracle uses Model-1 with perfect future information. Any numerical gap reflects both algorithm performance AND reward formulation differences.",
+    "requires": "gurobipy + free academic licence from gurobi.com"
+  },
+  "mpc_notes": {
+    "type": "Rolling-horizon MPC (no Gurobi) \u2014 reproduced variant",
+    "class": "V2GProfitMaxOracle",
+    "paper_horizon": 25,
+    "paper_horizon_source": "EV2Gym paper \u00a7V-B",
+    "reproduction_status": "Could not unambiguously match paper config (horizon=25). Treated as a distinct controller, not a faithful replication.",
+    "sign_reversal_note": "Paper MPC profit=+17.8\u00b19.3\u20ac; our variant\u2248-7.6\u00b110.6\u20ac. Discrepancy documented in paper limitations section."
+  },
+  "paper_refs_note": "Oracle paper_ref values (profit=3.7, sat=100%, overload=4kWh) are from EV2Gym Table VII and correspond to V2GProfitMaxOracleGB with Gurobi. MPC paper_ref values (profit=17.8, sat=76%, overload=183kWh) correspond to the paper MPC with horizon=25 which our reproduced variant cannot match.",
+  "eval_seeds": [
+    42,
+    123,
+    999,
+    7,
+    89
+  ],
+  "episodes_per_seed": 20,
+  "total_eval_episodes_per_agent": 100,
+  "seed_formula": "eval_seed * 1000 + ep_counter (unique per (seed, episode) pair)",
+  "no_hpo": true,
+  "no_vecnormalize": true,
+  "no_proxy_reward": "Oracle/MPC use Model-1 reward directly",
+  "statistical_note": "Oracle/MPC variance reflects stochastic EV arrivals and prices. No significance testing applies between Oracle and RL \u2014 formulation gap confounds.",
+  "agents_evaluated": [
+    "Oracle_MIQP"
+  ],
+  "episodes_collected": {
+    "Oracle_MIQP": 100
+  },
+  "oracle_available": true,
+  "mpc_available": true
+}

@@ -1,0 +1,7 @@
+Algorithm,reward_total_mean,reward_total_std,total_profit_cost_mean,total_profit_cost_std,user_satisfaction_mean,user_satisfaction_std,energy_charged_kwh_mean,energy_charged_kwh_std,energy_discharged_kwh_mean,energy_discharged_kwh_std,transformer_overload_kwh_mean,transformer_overload_kwh_std,battery_degradation_mean,battery_degradation_std,battery_deg_calendar_mean,battery_deg_calendar_std,battery_deg_cyclic_mean,battery_deg_cyclic_std,total_ev_served_mean,total_ev_served_std,exec_time_s_mean,exec_time_s_std
+AFAP,-14.233892,9.239357,-14.210693,9.236229,1.0,0.0,77.057097,27.992872,0.0,0.0,0.0,0.0,0.000205,7.1e-05,0.000116,4.1e-05,8.8e-05,3.6e-05,5.11,1.63852,6.44448,0.586624
+ALAP,-16.618634,10.19746,-16.595435,10.194247,1.0,0.0,77.057097,27.992872,0.0,0.0,0.0,0.0,0.000188,6.5e-05,9.9e-05,3.5e-05,8.8e-05,3.6e-05,5.11,1.63852,6.27199,0.470202
+RR,-14.233892,9.239357,-14.210693,9.236229,1.0,0.0,77.057097,27.992872,0.0,0.0,0.0,0.0,0.000205,7.1e-05,0.000116,4.1e-05,8.8e-05,3.6e-05,5.11,1.63852,6.20686,0.456793
+Paper_AFAP_ref,-13800.0,8600.0,-23.4,6.4,1.0,0.0,,,,,138.0,86.0,0.0004,9e-05,,,,,,,,
+Paper_ALAP_ref,,,-25.2,7.1,1.0,0.0,,,,,106.0,78.0,0.00038,9e-05,,,,,,,,
+Paper_RR_ref,,,-22.6,5.6,0.99,0.02,,,,,11.0,19.0,0.00045,0.0001,,,,,,,,

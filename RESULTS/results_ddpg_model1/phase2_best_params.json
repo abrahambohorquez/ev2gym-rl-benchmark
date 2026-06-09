@@ -1,0 +1,30 @@
+{
+  "best_value": 67.51203534917727,
+  "arch": {
+    "pi": [
+      128,
+      64
+    ],
+    "qf": [
+      64,
+      128
+    ]
+  },
+  "hp": {
+    "learning_rate": 0.00029087973697480173,
+    "gamma": 0.9670788718223859,
+    "tau": 0.001067043743688687,
+    "batch_size": 512,
+    "buffer_size": 1000000,
+    "learning_starts": 5000,
+    "train_freq": 1,
+    "gradient_steps": 4,
+    "action_noise_type": "normal",
+    "action_noise_sigma": 0.09189624551265466
+  },
+  "yaml_params": {
+    "spawn_multiplier": 6,
+    "discharge_price_factor": 1.4302926400143314,
+    "transformer_max_power": 250
+  }
+}

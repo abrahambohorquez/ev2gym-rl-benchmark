@@ -1,0 +1,64 @@
+{
+  "algorithm": "ARS",
+  "model": "Model1_V2G_Profit_Maximization",
+  "training_reward": "Model-2 proxy (dense): r_t = -(P_set_{t-1} - P_tot_{t-1})^2",
+  "evaluation_reward": "Model-1 (sparse): r_t = c_{t-1} - 100*eps_ov - 100*exp(-10*eps_usr)",
+  "proxy_reward_note": "ARS is gradient-free \u2014 it does not backpropagate through the reward. The proxy serves as the fitness signal for perturbation selection. Agents are NOT trained on the satisfaction term directly.",
+  "ars_specific_notes": {
+    "algorithm_type": "Gradient-free random search (Mania et al. 2018)",
+    "no_replay_buffer": true,
+    "no_critic_network": true,
+    "n_top_leq_n_delta": "n_top is clipped to min(n_top, n_delta) in build_model to ensure validity",
+    "convergence_note": "ARS converges more slowly than gradient-based methods by design. Optuna convergence curves may not plateau within 30 trials.",
+    "vecnorm_role": "VecNormalize normalises observations only. ARS uses this for policy input scaling, not for gradient computation."
+  },
+  "vecnorm_freeze": "VecNormalize stats frozen after training (training=False, norm_reward=False) before ALL evaluation episodes.",
+  "eval_seeds": [
+    42,
+    123,
+    999,
+    7,
+    89
+  ],
+  "episodes_per_seed": 20,
+  "total_eval_episodes": 100,
+  "training_timesteps": 1000000,
+  "n_parallel_envs": 30,
+  "optuna_trials_per_phase": 30,
+  "optuna_trial_timesteps": 100000,
+  "optuna_eval_episodes_per_trial": 8,
+  "optuna_asymmetry_note": "F2 searches same 30 trials as F1 but across 3 additional YAML dims (spawn_multiplier, discharge_price_factor, transformer_max_power). F2 HPs may be less well-tuned per dimension.",
+  "mpc_horizon_note": "EV2Gym paper MPC uses horizon=25 steps (Table VII). Our reproduced variant could not match that config \u2014 treated as a distinct controller.",
+  "paper_ref_note": "ARS results exist in Table VII: profit=17.7\u00b19.9 EUR, sat=53\u00b111%, overload=36\u00b167 kWh. Values in paper_ref are confirmed correct.",
+  "single_scenario_note": "All results are from the workplace scenario only.",
+  "statistical_note": "High std relative to mean expected in Phase 2. Pairwise differences may not be statistically significant without bootstrap CIs / Wilcoxon tests.",
+  "phase1_optuna_best_value": 6.512407026784359,
+  "phase2_optuna_best_value": 20.70296207256615,
+  "phase1_best_trial": 28,
+  "phase2_best_trial": 23,
+  "phase1_total_eval_episodes": 100,
+  "phase2_total_eval_episodes": 100,
+  "phase1_yaml": "results_ars_model1/phase1_best_config.yaml",
+  "phase2_yaml": "results_ars_model1/phase2_best_config.yaml",
+  "phase2_yaml_params": {
+    "spawn_multiplier": 6,
+    "discharge_price_factor": 1.2201110266212944,
+    "transformer_max_power": 200
+  },
+  "phase1_best_hps": {
+    "learning_rate": 0.0006458079140757046,
+    "n_delta": 4,
+    "n_top": 7,
+    "delta_std": 0.116589030073671,
+    "zero_policy": false
+  },
+  "phase2_best_hps": {
+    "learning_rate": 0.005535513471566614,
+    "n_delta": 4,
+    "n_top": 17,
+    "delta_std": 0.026966629963492056,
+    "zero_policy": true
+  },
+  "phase1_n_top_used": 4,
+  "phase2_n_top_used": 4
+}

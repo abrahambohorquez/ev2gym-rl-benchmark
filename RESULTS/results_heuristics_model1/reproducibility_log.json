@@ -1,0 +1,66 @@
+{
+  "algorithms": [
+    "AFAP",
+    "ALAP",
+    "RR"
+  ],
+  "algorithm_type": "deterministic heuristics \u2014 no HPO, no VecNormalize, no replay buffer",
+  "heuristic_notes": {
+    "AFAP": "Charges at maximum rate immediately. V2G-unaware (never discharges).",
+    "ALAP": "Delays charging to latest feasible time. V2G-unaware.",
+    "RR": "Distributes capacity evenly via RoundRobinM1 (Model-1 fix). V2G-unaware. Stock RoundRobin reads power_setpoints=0 in Model-1, charging 0 EVs. RoundRobinM1 injects transformer capacity as power budget."
+  },
+  "no_hpo": true,
+  "no_vecnormalize": true,
+  "no_proxy_reward": true,
+  "evaluation_reward": "Model-1 (sparse): r_t = c_{t-1} - 100*eps_ov - 100*exp(-10*eps_usr)",
+  "eval_seeds": [
+    42,
+    123,
+    999,
+    7,
+    89
+  ],
+  "episodes_per_seed": 20,
+  "total_eval_episodes_per_agent": 100,
+  "seed_formula": "eval_seed * 1000 + ep_counter (unique per (seed, episode) pair)",
+  "mpc_horizon_note": "EV2Gym paper MPC uses horizon=25 steps (Table VII \u00a7V-B). Our reproduced MPC variant could not match that config \u2014 treated as a distinct controller.",
+  "paper_refs_verified": {
+    "AFAP": {
+      "profit_mean": -23.4,
+      "profit_std": 6.4,
+      "sat_mean": 1.0,
+      "overload_mean": 138.0,
+      "overload_std": 86.0,
+      "Qlost_mean": 0.0004
+    },
+    "ALAP": {
+      "profit_mean": -25.2,
+      "profit_std": 7.1,
+      "sat_mean": 1.0,
+      "overload_mean": 106.0,
+      "overload_std": 78.0,
+      "Qlost_mean": 0.00038
+    },
+    "RR": {
+      "profit_mean": -22.6,
+      "profit_std": 5.6,
+      "sat_mean": 0.99,
+      "overload_mean": 11.0,
+      "overload_std": 19.0,
+      "Qlost_mean": 0.00045
+    }
+  },
+  "statistical_note": "Heuristics are deterministic given a seed. Variance reflects stochastic EV arrivals and prices only. No significance testing applies to comparisons between heuristics and RL agents.",
+  "total_episodes_per_agent": 100,
+  "agents_evaluated": [
+    "AFAP",
+    "ALAP",
+    "RR"
+  ],
+  "episodes_collected": {
+    "AFAP": 100,
+    "ALAP": 100,
+    "RR": 100
+  }
+}

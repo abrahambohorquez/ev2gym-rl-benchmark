@@ -1,0 +1,70 @@
+{
+  "total_profit_cost": {
+    "phase1_mean": 37.41159907527074,
+    "phase1_ci95": [
+      30.878069717005886,
+      44.324773437578436
+    ],
+    "phase2_mean": 106.4930516644859,
+    "phase2_ci95": [
+      92.08610781072987,
+      122.14291542088608
+    ],
+    "wilcoxon_p1_vs_p2": {
+      "stat": 0.0,
+      "p_value": 3.896559845095909e-18,
+      "significant_at_05": true
+    }
+  },
+  "user_satisfaction": {
+    "phase1_mean": 29.228214058956915,
+    "phase1_ci95": [
+      27.59056016156463,
+      30.674823681972786
+    ],
+    "phase2_mean": 36.704281831065764,
+    "phase2_ci95": [
+      35.16792684594671,
+      38.281216159297045
+    ],
+    "wilcoxon_p1_vs_p2": {
+      "stat": 262.0,
+      "p_value": 1.767134830370648e-14,
+      "significant_at_05": true
+    }
+  },
+  "transformer_overload_kwh": {
+    "phase1_mean": 0.0,
+    "phase1_ci95": [
+      0.0,
+      0.0
+    ],
+    "phase2_mean": 0.0,
+    "phase2_ci95": [
+      0.0,
+      0.0
+    ],
+    "wilcoxon_p1_vs_p2": {
+      "stat": null,
+      "p_value": null,
+      "error": "zero_method 'wilcox' and 'pratt' do not work if x - y is zero for all elements."
+    }
+  },
+  "battery_degradation": {
+    "phase1_mean": 0.33234302321119324,
+    "phase1_ci95": [
+      0.3065001641235622,
+      0.35380197313801137
+    ],
+    "phase2_mean": 1.2650369713623868,
+    "phase2_ci95": [
+      1.2067203738574304,
+      1.331481151579947
+    ],
+    "wilcoxon_p1_vs_p2": {
+      "stat": 0.0,
+      "p_value": 3.896559845095909e-18,
+      "significant_at_05": true
+    }
+  }
+}

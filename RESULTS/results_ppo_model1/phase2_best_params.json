@@ -1,0 +1,35 @@
+{
+  "best_value": 59.96903367914638,
+  "arch": {
+    "pi": [
+      512,
+      512,
+      256,
+      512
+    ],
+    "vf": [
+      512,
+      512,
+      128,
+      512
+    ]
+  },
+  "hp": {
+    "learning_rate": 0.0011909852594364481,
+    "gamma": 0.9569192868998581,
+    "n_steps": 512,
+    "batch_size": 1024,
+    "n_epochs": 12,
+    "gae_lambda": 0.9362658256402622,
+    "clip_range": 0.3362502243358399,
+    "ent_coef": 0.01057815811871766,
+    "vf_coef": 0.9073900171213435,
+    "max_grad_norm": 0.36185305828638525,
+    "use_sde": false
+  },
+  "yaml_params": {
+    "spawn_multiplier": 6,
+    "discharge_price_factor": 1.4947833211070816,
+    "transformer_max_power": 250
+  }
+}

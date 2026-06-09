@@ -1,0 +1,26 @@
+{
+  "best_value": 8.31522451841738,
+  "arch": {
+    "pi": [
+      512,
+      64,
+      512
+    ],
+    "vf": [
+      512,
+      128,
+      256
+    ]
+  },
+  "hp": {
+    "learning_rate": 9.132888768997024e-05,
+    "gamma": 0.9880385875060959,
+    "n_steps": 2048,
+    "batch_size": 64,
+    "gae_lambda": 0.9511536378222661,
+    "target_kl": 0.0026873381074592256,
+    "cg_max_steps": 15,
+    "n_critic_updates": 5,
+    "sub_sampling_factor": 1
+  }
+}

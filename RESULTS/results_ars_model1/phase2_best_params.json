@@ -1,0 +1,21 @@
+{
+  "best_value": 20.70296207256615,
+  "arch": {
+    "net": [
+      64,
+      512
+    ]
+  },
+  "hp": {
+    "learning_rate": 0.005535513471566614,
+    "n_delta": 4,
+    "n_top": 17,
+    "delta_std": 0.026966629963492056,
+    "zero_policy": true
+  },
+  "yaml_params": {
+    "spawn_multiplier": 6,
+    "discharge_price_factor": 1.2201110266212944,
+    "transformer_max_power": 200
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "best_value": 28.02458966471022,
+  "arch": {
+    "pi": [
+      512,
+      512
+    ],
+    "qf": [
+      512,
+      1024
+    ]
+  },
+  "hp": {
+    "learning_rate": 0.0017471756008591484,
+    "qf_learning_rate": 0.0007982133360457609,
+    "gamma": 0.9817073215404615,
+    "batch_size": 1024,
+    "buffer_size": 500000,
+    "learning_starts": 1000,
+    "train_freq": 8,
+    "gradient_steps": 8,
+    "policy_delay": 1,
+    "ent_coef": 0.01,
+    "use_sde": false,
+    "sde_sample_freq": -1,
+    "n_steps": 1
+  }
+}
